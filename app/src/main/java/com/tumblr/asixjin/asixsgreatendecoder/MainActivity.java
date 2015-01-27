@@ -36,4 +36,43 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public StringBuilder encode(StringBuilder msg, int shiftValue)
+    {
+        if(shiftValue > 35 || shiftValue <= 0)
+        {
+            return new StringBuilder("Invalid number! Please try again!");
+        }
+
+        int encodeLength = msg.length() - 1;
+        for(int i=0; i <= encodeLength; i++)
+        {
+            int newCharIndex = Character.digit(msg.charAt(i), 36) + shiftValue;
+            if(newCharIndex >= 36)
+            {
+                newCharIndex -= 36;
+            }
+            msg.setCharAt(i, Character.forDigit(newCharIndex, 36));
+        }
+        return msg;
+    }
+
+    public StringBuilder decode(StringBuilder msg, int shiftValue)
+    {
+        if(shiftValue > 35 || shiftValue <= 0)
+        {
+            return new StringBuilder("Invalid number! Please try again!");
+        }
+        int encodeLength = msg.length() - 1;
+        for(int i=0; i <= encodeLength; i++)
+        {
+            int newCharIndex = Character.digit(msg.charAt(i), 36) - shiftValue;
+            if(newCharIndex < 0)
+            {
+                newCharIndex = Math.abs(newCharIndex);
+            }
+            msg.setCharAt(i, Character.forDigit(newCharIndex, 36));
+        }
+        return msg;
+    }
 }
