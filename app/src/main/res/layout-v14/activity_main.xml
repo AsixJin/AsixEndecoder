@@ -78,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="NOTE: Any punctuation (including spaces) always convert to the same character which is dependent upon number that was chosen. Keep this in mind when encoding and decoding messages."
         android:id="@+id/result"
         android:layout_below="@+id/button"
         android:layout_marginTop="31dp"
@@ -107,11 +107,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/encodeNumm"
         android:layout_below="@+id/textView5"
-        android:layout_alignRight="@+id/textView4"
-        android:layout_alignEnd="@+id/textView4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:textColor="#ffac000b"
-        android:background="#bd000000" />
+        android:background="#bd000000"
+        android:numeric="integer"
+        android:inputType="number"
+        android:layout_alignLeft="@+id/eTog"
+        android:layout_alignStart="@+id/eTog"
+        android:layout_alignRight="@+id/eTog"
+        android:layout_alignEnd="@+id/eTog" />
 
 </RelativeLayout>

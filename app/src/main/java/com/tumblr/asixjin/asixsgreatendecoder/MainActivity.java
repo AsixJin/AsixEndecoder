@@ -49,7 +49,17 @@ public class MainActivity extends ActionBarActivity {
         TextView endMsg = (TextView) findViewById(R.id.result);
 
         StringBuilder eMsg = new StringBuilder(message.getText());
-        int code = Integer.parseInt(numCode.getText().toString());
+        int code;
+
+        try
+        {
+           code = Integer.parseInt(numCode.getText().toString());
+        }
+        catch(NumberFormatException e)
+        {
+           code = 0;
+        }
+
 
         if(toggle.isChecked())
         {
@@ -93,7 +103,7 @@ public class MainActivity extends ActionBarActivity {
             int newCharIndex = Character.digit(msg.charAt(i), 36) - shiftValue;
             if(newCharIndex < 0)
             {
-                newCharIndex = Math.abs(newCharIndex);
+                newCharIndex += 36;
             }
             msg.setCharAt(i, Character.forDigit(newCharIndex, 36));
         }
