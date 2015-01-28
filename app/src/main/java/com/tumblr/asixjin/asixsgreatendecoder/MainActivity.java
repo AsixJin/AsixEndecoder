@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.Switch;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -41,7 +43,22 @@ public class MainActivity extends ActionBarActivity {
 
     public void clicked(View v)
     {
+        Switch toggle = (Switch) findViewById(R.id.eTog);
+        EditText message = (EditText) findViewById(R.id.dialogg);
+        EditText numCode = (EditText) findViewById(R.id.encodeNumm);
+        TextView endMsg = (TextView) findViewById(R.id.result);
 
+        StringBuilder eMsg = new StringBuilder(message.getText());
+        int code = Integer.parseInt(numCode.getText().toString());
+
+        if(toggle.isChecked())
+        {
+            endMsg.setText(decode(eMsg, code));
+        }
+        else
+        {
+            endMsg.setText(encode(eMsg, code));
+        }
     }
 
     public StringBuilder encode(StringBuilder msg, int shiftValue)
