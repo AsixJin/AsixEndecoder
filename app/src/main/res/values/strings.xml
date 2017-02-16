@@ -5,4 +5,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string name="intro_message">NOTE: Any punctuation (including spaces) always convert to the same character which is dependent upon number that was chosen. Keep this in mind when encoding and decoding messages.</string>
+
 </resources>

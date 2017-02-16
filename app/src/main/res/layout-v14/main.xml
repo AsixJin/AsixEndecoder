@@ -4,15 +4,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:background="@android:color/holo_red_dark">
+    android:background="@drawable/background">
 
     <Switch
-        android:layout_width="40dp"
+        android:layout_width="wrap_content"
         android:layout_height="10dp"
-        android:text="New Switch"
         android:id="@+id/eTog"
         android:layout_marginTop="60dp"
-        android:checked="false"
+        android:checked="true"
         android:elevation="0dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/textView5" />
@@ -21,23 +20,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Encode"
+        android:text="Decode"
         android:id="@+id/textView3"
         android:layout_alignBottom="@+id/eTog"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textColor="#ffffffff" />
+        android:textColor="@android:color/black" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Decode"
+        android:text="Encode"
         android:id="@+id/textView4"
         android:layout_alignBottom="@+id/eTog"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:textColor="#ffffffff" />
+        android:textColor="@android:color/black" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,7 +46,7 @@
         android:id="@+id/textView2"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffffff" />
+        android:textColor="@android:color/black" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -58,37 +57,22 @@
         android:layout_marginTop="58dp"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffffff" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GO!"
-        android:id="@+id/button"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2"
-        android:onClick="clicked"
-        android:clickable="true"
-        android:enabled="true" />
+        android:textColor="@android:color/black" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="NOTE: Any punctuation (including spaces) always convert to the same character which is dependent upon number that was chosen. Keep this in mind when encoding and decoding messages."
+        android:text="@string/intro_message"
         android:id="@+id/result"
-        android:layout_below="@+id/button"
-        android:layout_marginTop="31dp"
         android:textIsSelectable="true"
         android:background="#bd000000"
-        android:textColor="#ffac000b"
+        android:textColor="@android:color/white"
         android:layout_toStartOf="@+id/textView4"
         android:layout_alignRight="@+id/textView4"
         android:layout_alignEnd="@+id/textView4"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/submitButton" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -100,20 +84,29 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#bd000000"
-        android:textColor="#ffac000b" />
+        android:textColor="@android:color/white" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/encodeNumm"
         android:layout_below="@+id/textView5"
-        android:textColor="#ffac000b"
+        android:textColor="@android:color/white"
         android:background="#bd000000"
         android:numeric="integer"
         android:inputType="number"
-        android:layout_alignLeft="@+id/eTog"
         android:layout_alignStart="@+id/eTog"
-        android:layout_alignRight="@+id/eTog"
         android:layout_alignEnd="@+id/eTog" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Encode"
+        android:id="@+id/submitButton"
+        android:onClick="clicked"
+        android:clickable="true"
+        android:enabled="true"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/textView2" />
 
 </RelativeLayout>
